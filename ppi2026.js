@@ -184,16 +184,12 @@ const letra = "a";
 
 // find - retorna a primeira ocorrência,
 // de acordo com a condição
-let outFind = fruits3.find(
-  (fruit) => fruit[0].toLowerCase() === letra
-);
+let outFind = fruits3.find((fruit) => fruit[0].toLowerCase() === letra);
 console.log(outFind);
 
 // filter - retorna TODAS as ocorrências,
 // de acordo com a condição
-let outFilter = fruits3.filter(
-  (fruit) => fruit[0].toLowerCase() === letra
-);
+let outFilter = fruits3.filter((fruit) => fruit[0].toLowerCase() === letra);
 console.log(outFilter);
 
 // DESAFIO - Exibir o valor da soma de todos os
@@ -209,23 +205,21 @@ numbers.map((number) => {
 console.log(soma);
 
 // reduce
-console.log(
-  numbers.reduce((soma, number) => soma + number)
-);
+console.log(numbers.reduce((soma, number) => soma + number));
 
 // Object
 const pessoa = {
-  nome: 'Zé Vaqueiro',
+  nome: "Zé Vaqueiro",
   idade: 25,
-  profissao: 'Cantor/Compositor'
+  profissao: "Cantor/Compositor",
 };
 
 console.log(pessoa.nome);
-console.log(pessoa['nome']);
+console.log(pessoa["nome"]);
 console.log(Object.keys(pessoa));
 console.log(Object.values(pessoa));
 
-const pessoa2 = { ...pessoa, hobby: 'Vaquejada'};
+const pessoa2 = { ...pessoa, hobby: "Vaquejada" };
 console.log(pessoa2);
 
 // Atribuição por desestruturação
@@ -233,7 +227,7 @@ const { nome, idade } = pessoa2;
 console.log(nome, idade);
 
 // Construtor - Protótipo de Objeto
-function Product(name, sto, ram, price, qty, category){
+function Product(name, sto, ram, price, qty, category) {
   this.name = name;
   this.sto = sto;
   this.ram = ram;
@@ -242,14 +236,21 @@ function Product(name, sto, ram, price, qty, category){
   this.category = category;
 }
 
-const p1 = new Product('iPhone', 256, 16, 5000, 10, 'Celular');
-const p2 = new Product('iPad', 512, 16, 8000, 20, 'Tablet');
-const p3 = new Product('Macbook', 1024, 24, 15000, 30, 'Notebook');
-const p4 = new Product('iPhone Pro Max', 256, 16, 7000, 15, 'Celular');
-const p5 = new Product('iPad Pro', 512, 16, 10000, 25, 'Tablet');
-const p6 = new Product('Macbook Pro', 1024, 24, 25000, 35, 'Notebook');
+const p1 = new Product("iPhone", 256, 16, 5000, 10, "Celular");
+const p2 = new Product("iPad", 512, 16, 8000, 20, "Tablet");
+const p3 = new Product("Macbook", 1024, 24, 15000, 30, "Notebook");
+const p4 = new Product("iPhone Pro Max", 256, 16, 7000, 15, "Celular");
+const p5 = new Product("iPad Pro", 512, 16, 10000, 25, "Tablet");
+const p6 = new Product("Macbook Pro", 1024, 24, 25000, 35, "Notebook");
 
-const estoque = [ p1, p2, p3, p4, p5, p6];
+const estoque = [
+  { ...p1 },
+  { ...p2 },
+  { ...p3 },
+  { ...p4 },
+  { ...p5 },
+  { ...p6 },
+];
 console.log(estoque);
 
 /* DESAFIO 1
