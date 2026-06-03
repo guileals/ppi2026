@@ -243,14 +243,10 @@ const p4 = new Product("iPhone Pro Max", 256, 16, 7000, 15, "Celular");
 const p5 = new Product("iPad Pro", 512, 16, 10000, 25, "Tablet");
 const p6 = new Product("Macbook Pro", 1024, 24, 25000, 35, "Notebook");
 
-const estoque = [
-  { ...p1 },
-  { ...p2 },
-  { ...p3 },
-  { ...p4 },
-  { ...p5 },
-  { ...p6 },
-];
+const estoque =
+  // [p1, p2, p3, p4, p5, p6];
+  [{ ...p1 }, { ...p2 }, { ...p3 }, { ...p4 }, { ...p5 }, { ...p6 }];
+
 console.log(estoque);
 
 /* DESAFIO 1
@@ -261,3 +257,9 @@ console.log(estoque);
   d) Filtre produtos de acordo uma categoria
 
 */
+
+// a) Valor total de todos os produtos em estoque
+const valorTotal = estoque
+  .reduce((valor, p) => valor + p.price * p.qty, 0)
+  .toFixed(2);
+console.log(`Valor total: R$ ${valorTotal}`);
