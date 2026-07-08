@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
+import NoticeList from "./components/NoticeList";
 
 function App() {
   const notices = [
@@ -29,22 +30,7 @@ function App() {
         title={"Programação para Internet"}
         subtitle={"Curso Técnico Integrado em Informática"}
       />
-      <main className="main">
-        <h1>Mural Digital do IFRN - Campus Macau</h1>
-
-        {notices.map((notice) => (
-          <article>
-            <p>{notice.category}</p>
-            <h3>{notice.title}</h3>
-            <p>{notice.description}</p>
-            <div>
-              <span>Por: {notice.author}</span>
-              <span>Data: {notice.date}</span>
-            </div>
-          </article>
-        ))}
-
-      </main>
+      <NoticeList notices={notices} />
     </>
   );
 }
